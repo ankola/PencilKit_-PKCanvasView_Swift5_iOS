@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Paint DrawVC-->
+        <scene sceneID="QFH-4r-5ka">
+            <objects>
+                <viewController storyboardIdentifier="PaintDrawVC" id="6fT-kJ-MEE" customClass="PaintDrawVC" customModule="ecom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NC1-z4-G2w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaX-Ok-fav" customClass="PKCanvasView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BaX-Ok-fav" firstAttribute="top" secondItem="lG3-rg-Vih" secondAttribute="top" id="3TK-fO-4qC"/>
+                            <constraint firstItem="lG3-rg-Vih" firstAttribute="bottom" secondItem="BaX-Ok-fav" secondAttribute="bottom" id="XGR-tA-7hT"/>
+                            <constraint firstItem="lG3-rg-Vih" firstAttribute="trailing" secondItem="BaX-Ok-fav" secondAttribute="trailing" id="dqR-uc-eU4"/>
+                            <constraint firstItem="BaX-Ok-fav" firstAttribute="leading" secondItem="lG3-rg-Vih" secondAttribute="leading" id="vdm-oa-ZtQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lG3-rg-Vih"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ieb-UH-aTg">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Undo" id="WNu-e8-gx8">
+                                <connections>
+                                    <action selector="undo:" destination="T0M-Zm-PXe" id="c8g-mh-p9t"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Redo" id="Auu-cR-4jy">
+                                <connections>
+                                    <action selector="redo:" destination="T0M-Zm-PXe" id="afa-Tb-Cgc"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Clear" id="lpm-MY-byN">
+                                <connections>
+                                    <action selector="TapOnClearBtn:" destination="6fT-kJ-MEE" id="oVT-Gk-EDe"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Image" id="gh2-en-0OU">
+                                <connections>
+                                    <action selector="TapOnImageBtn:" destination="6fT-kJ-MEE" id="tkA-pq-J3I"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="CanvasView" destination="BaX-Ok-fav" id="kiS-db-ORj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T0M-Zm-PXe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="118.52678571428571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CQ9-v8-inm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mLx-qK-h22" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gv3-Ww-lz3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6fT-kJ-MEE" kind="relationship" relationship="rootViewController" id="Qwc-zB-HGb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQf-Uq-dag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+</document>
